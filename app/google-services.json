@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "938060840044",
+    "project_id": "conexa-hotspot",
+    "storage_bucket": "conexa-hotspot.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:938060840044:android:7bac34c3d980d4c042ec49",
+        "android_client_info": {
+          "package_name": "com.media.conexahotspot"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-WPLGO6iqGG4ICwQrGtEQemmee1b5yjw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

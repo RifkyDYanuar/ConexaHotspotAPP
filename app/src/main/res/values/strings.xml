@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Conexa Hotspot</string>
+    <string name="client_id">938060840044-m5vvv2008l514o953bphe5t1o59p06ej.apps.googleusercontent.com</string>
+    <string name="hak"> ©2024| Hak Cipta dilindungi oleh Conexa Hotspot</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <string name="contact">We are ready to help anytime and anywhere. Please contact us anytime via:</string>
+    <string name="email">conexamediaacces@gmail.com</string>
+    <string name="whatsapps">0821-1674-7973</string>
+    <string name="AppVersi">Conexa App | Version 2.0 </string>
+
+</resources>

@@ -1,0 +1,18 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.ConexaHotspot" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+         <item name="colorPrimary">@color/bluedark</item>
+
+    </style>
+
+    <style name="Theme.ConexaHotspot" parent="Base.Theme.ConexaHotspot" />
+
+
+
+<!--<style name="ActivityAnima" parent=@android:style/Animation.Activity()-->
+<!--    <item name="androidwindowEnterAnimation">@anim/slide_in</item>-->
+<!--    <item name="androidwindowExitAnimation">@anim/slide_out</item>-->
+<!--</style>-->
+
+</resources>

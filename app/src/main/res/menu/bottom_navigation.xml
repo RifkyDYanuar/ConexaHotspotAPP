@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/home"
+        android:enabled="true"
+        android:icon="@drawable/baseline_dashboard_24"
+        android:title="Beranda"/>
+    <item
+        android:id="@+id/page_2"
+        android:enabled="true"
+        android:icon="@drawable/baseline_receipt_24"
+        android:title="Riwayat"/>
+    <item
+        android:id="@+id/page_3"
+        android:enabled="false"
+        android:title=""
+        />
+    <item
+
+        android:id="@+id/page_4"
+        android:enabled="true"
+        android:icon="@drawable/baseline_help_outline_24"
+        android:title="Layanan"/>
+    <item
+        android:id="@+id/page_5"
+        android:enabled="true"
+        android:icon="@drawable/baseline_manage_accounts_24"
+        android:title="Profil"/>
+</menu>
