@@ -11,13 +11,10 @@
         android:layout_width="match_parent"
         android:layout_height="400dp"
         app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
-
-        <!-- Drag handle for accessibility -->
         <com.google.android.material.bottomsheet.BottomSheetDragHandleView
             android:id="@+id/drag_handle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
-
         <com.google.android.material.textfield.TextInputLayout
 
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"

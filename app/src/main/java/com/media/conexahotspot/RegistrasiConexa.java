@@ -2,7 +2,12 @@ package com.media.conexahotspot;
 
 
 
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +21,9 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.app.ActivityCompat;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -24,6 +32,9 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class RegistrasiConexa extends AppCompatActivity {
 
+    private static final String CHANNEL_ID = "conexa_media_hotspot_channel";
+    private static final String CHANNEL_NAME = "Conexa Media Hotspot Notifications";
+    private static final String CHANNEL_DESCRIPTION = "Channel for Conexa Media Hotspot notifications";
     Button Register;
     FirebaseAuth auth;
     DatabaseReference databaseReference;
@@ -33,7 +44,7 @@ public class RegistrasiConexa extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registrasi_conexa);
-
+        createChannelNotif();
         EditText Enama = findViewById(R.id.nama);
         EditText Eemail = findViewById(R.id.email);
         EditText Eusername = findViewById(R.id.username);
@@ -41,8 +52,6 @@ public class RegistrasiConexa extends AppCompatActivity {
         Register = findViewById(R.id.register);
         auth = FirebaseAuth.getInstance();
         databaseReference = FirebaseDatabase.getInstance().getReference("Users");
-
-
         Register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -69,6 +78,7 @@ public class RegistrasiConexa extends AppCompatActivity {
                                             .addOnCompleteListener(task1 -> {
                                                 if (task1.isSuccessful()) {
                                                     showDialogSucces();
+                                                    showNotification();
 
                                                 } else {
                                                     Toast.makeText(RegistrasiConexa.this, "Gagal menyimpan data pengguna", Toast.LENGTH_SHORT).show();
@@ -119,5 +129,42 @@ public class RegistrasiConexa extends AppCompatActivity {
         TextView content = view.findViewById(R.id.content);
         content.setText(errorMessage);
         alertDialog.show();
+    }
+
+    private void createChannelNotif(){
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+            CharSequence name = CHANNEL_NAME;
+            String description = CHANNEL_DESCRIPTION;
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+
+            NotificationChannel notificationChannel = new NotificationChannel(CHANNEL_ID, name, importance);
+            notificationChannel.setDescription(description);
+
+            NotificationManager manager = getSystemService(NotificationManager.class);
+
+            if (manager!= null){
+
+                manager.createNotificationChannel(notificationChannel);
+            }
+        }
+    }
+
+    private void showNotification(){
+        createChannelNotif();
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID)
+                .setSmallIcon(R.drawable.logo_cnx)
+                .setContentTitle("Register is Successfully")
+                .setContentText("Silahkan login")
+                .setStyle(new NotificationCompat.BigTextStyle()
+                        .bigText("Nikmati Paket internet murah, luas, dan cepat tanpa batas di Conexa Media Hotspot"))
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+
+        NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(this);
+
+        if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
+
+            return;
+        }
+        notificationManagerCompat.notify(1, builder.build());
     }
 }

@@ -6,7 +6,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ProfilFragment">
 
-
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="280dp"
@@ -71,154 +70,12 @@
                         android:fontFamily="@font/poppins_bold"
                         android:layout_marginTop="20dp"
                         android:layout_marginStart="20dp"/>
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layout_marginTop="16dp"
-                        android:layout_marginHorizontal="30dp">
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:padding="20dp">
-                            <TextView
-                                android:layout_weight="2"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="Name"
-                                android:fontFamily="@font/poppins_bold"/>
-                            <TextView
-                                android:layout_weight="1"
-                                android:id="@+id/name"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="Name"
-                                android:fontFamily="@font/poppins_bold"/>
-                        </LinearLayout>
-                        <View
-                            android:layout_marginHorizontal="10dp"
-                            android:layout_marginTop="8dp"
-                            android:layout_width="match_parent"
-                            android:layout_height="1dp"
-                            android:background="@color/dark_grey"/>
-                        <LinearLayout
-                            android:padding="20dp"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-                            <TextView
-                                android:layout_weight="2"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="Username"
-                                android:fontFamily="@font/poppins_bold"/>
-                            <TextView
-                                android:layout_weight="1"
-                                android:id="@+id/username"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="Name"
-                                android:fontFamily="@font/poppins_bold"/>
-                        </LinearLayout>
-                        <View
-                            android:layout_marginTop="10dp"
-                            android:layout_width="match_parent"
-                            android:layout_height="1dp"
-                            android:layout_marginHorizontal="10dp"
-                            android:background="@color/dark_grey"/>
-                        <LinearLayout
-                            android:padding="20dp"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-                            <TextView
-                                android:layout_weight="2"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="Email"
-                                android:fontFamily="@font/poppins_bold"/>
-                            <TextView
-                                android:layout_weight="1"
-                                android:id="@id/email"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="Name"
-                                android:fontFamily="@font/poppins_bold"/>
-                        </LinearLayout>
-                        <View
-                            android:layout_marginHorizontal="10dp"
-                            android:layout_marginTop="8dp"
-                            android:layout_width="match_parent"
-                            android:layout_height="1dp"
-                            android:background="@color/dark_grey"/>
-                        <LinearLayout
-                            android:padding="20dp"
-                            android:layout_marginTop="6dp"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-                            <TextView
-                                android:layout_weight="2"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="No.Hp"
-                                android:fontFamily="@font/poppins_bold"/>
-                            <TextView
-                                android:id="@+id/nohp"
-                                android:layout_weight="1"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="Name"
-                                android:fontFamily="@font/poppins_bold"/>
-                        </LinearLayout>
-                        <View
-                            android:layout_marginHorizontal="10dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_width="match_parent"
-                            android:layout_height="1dp"
-                            android:background="@color/dark_grey"/>
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:layout_marginTop="16dp">
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal"
-                                android:padding="20dp">
-                                <TextView
-                                    android:layout_weight="2"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="Address"
-                                    android:fontFamily="@font/poppins_bold"/>
-                                <TextView
-                                    android:padding="50dp"
-                                    android:layout_weight="1"
-                                    android:id="@+id/addres"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="Name"
-                                    android:fontFamily="@font/poppins_bold"/>
-                            </LinearLayout>
-                            <View
-                                android:layout_marginHorizontal="10dp"
-                                android:layout_marginTop="8dp"
-                                android:layout_width="match_parent"
-                                android:layout_height="1dp"
-                                android:background="@color/dark_grey"/>
-                        </LinearLayout>
-
-
-                    </LinearLayout>
 
                     <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
                         app:cardElevation="8dp"
-                        android:layout_marginStart="5dp"
+                        android:layout_marginStart="20dp"
                         android:layout_marginTop="30dp"
                         android:layout_marginEnd="20dp"
                         app:cardCornerRadius="15dp">
@@ -235,7 +92,7 @@
                                 android:layout_weight="1"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Update Profil"
+                                android:text="My Profile"
                                 android:fontFamily="@font/poppins_bold"
                                 android:layout_margin="20dp"/>
                             <ImageView
@@ -255,7 +112,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
                         app:cardElevation="8dp"
-                        android:layout_marginStart="5dp"
+                        android:layout_marginStart="20dp"
                         android:layout_marginEnd="20dp"
                         android:layout_marginTop="20dp"
                         app:cardCornerRadius="15dp">
@@ -292,7 +149,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
                         app:cardElevation="8dp"
-                        android:layout_marginStart="5dp"
+                        android:layout_marginStart="20dp"
                         android:layout_marginEnd="20dp"
                         android:layout_marginTop="20dp"
                         app:cardCornerRadius="15dp">
@@ -337,7 +194,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
                         app:cardElevation="8dp"
-                        android:layout_marginStart="5dp"
+                        android:layout_marginStart="20dp"
                         android:layout_marginEnd="20dp"
                         android:layout_marginTop="20dp"
                         app:cardCornerRadius="15dp">
@@ -372,7 +229,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
                         app:cardElevation="8dp"
-                        android:layout_marginStart="5dp"
+                        android:layout_marginStart="20dp"
                         android:layout_marginEnd="20dp"
                         android:layout_marginTop="20dp"
                         app:cardCornerRadius="15dp">
@@ -407,51 +264,55 @@
                     <Button
                         android:id="@+id/logout"
                         style="@style/Widget.Material3.Button.OutlinedButton.Icon"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="10dp"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginHorizontal="20dp"
+                        android:layout_marginTop="50dp"
                         android:fontFamily="@font/poppins_bold"
                         android:text="Logout account"
                         android:textColor="@color/orange"
                         app:icon="@drawable/baseline_logout_24"
                         app:iconTint="@color/orange"
                         app:strokeColor="@color/orange" />
-
                 </LinearLayout>
             </ScrollView>
 
-
-
         </FrameLayout>
-    <ImageView
-        android:id="@+id/image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/baseline_person_24"
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_marginTop="60dp"
-        android:layout_gravity="center_horizontal"/>
-    <TextView
-        android:id="@+id/show_name"
-        android:textAlignment="center"
-        android:text="Name"
-        android:textColor="@color/white"
-        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins_bold"
-        android:layout_marginTop="120dp"/>
-    <TextView
-        android:id="@+id/show_username"
-        android:textAlignment="center"
-        android:text="username"
-        android:textColor="@color/white"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="10dp"
-        android:fontFamily="@font/poppins_bold"
-        android:layout_marginTop="140dp"/>
-
-
-
+        android:orientation="horizontal">
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/profile"
+            android:layout_marginStart="18dp"
+            />
+        <LinearLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="2dp"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/show_name"
+                android:textSize="20sp"
+                android:text="Name"
+                android:textColor="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_bold" />
+            <TextView
+                android:id="@+id/show_username"
+                android:text="username"
+                android:textColor="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:fontFamily="@font/poppins_bold" />
+        </LinearLayout>
+    </LinearLayout>
 
 </FrameLayout>

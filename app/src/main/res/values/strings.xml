@@ -24,5 +24,48 @@
     <string name="email">conexamediaacces@gmail.com</string>
     <string name="whatsapps">0821-1674-7973</string>
     <string name="AppVersi">Conexa App | Version 2.0 </string>
+    <string name="terhubung">Terhubung di Semua Titik Akses</string>
+    <string name="lite">Hotspot Lite</string>
+    <string name="hargalite">RP110.000</string>
+    <string name="perangkatlite">3 Perangkat</string>
+    <string name="pro">Hotspot Pro</string>
+    <string name="hargapro">RP150.000</string>
+    <string name="perangkatpro">4 Perangkat</string>
+    <string name="max">Hotspot Max</string>
+    <string name="hargamax">RP190.000</string>
+    <string name="perangkatmax">5 Perangkat</string>
+    <string name="ultra">Hotspot Ultra</string>
+    <string name="hargaultra">RP230.000</string>
+    <string name="perangkatultra">6 Perangkat</string>
+    <string name="notfound">History Not Found!</string>
+    <string name="descriptionforhistory">Please install the internet package listed.</string>
+    <string name="aboutus">CONEXA MEDIA dengan brand CONEXA-Net adalah perusahaan Penyedia Jasa Akses Internet (Internet Service Provider / ISP)
+        yang berfokus pada penyediaan layanan Internet Dedicated bagi Perusahaan, Pemerintahan, Pelaku Jual Kembali Jasa Telekomunikasi,
+        dan Freelancer.Internet kini sudah menjadi kebutuhan mendasar bagi siapapun.
+        Keterbatasan sumberdaya perusahaan internet broadband nasional mengakibatkan
+        banyaknya kendala pengguna dalam rangka memenuhi kebutuhan akses internet,
+        mulai dari permintaan layanan yang tidak bisa dipenuhi sampai penerapan
+        Kebijakan Penggunaan Batas Wajar (Fair Usage Policy / FUP) yang mengakibatkan kecepatan Internet menurun signifikan.
+        CONEXA - NET hadir sebagai alternatif sekaligus solusi bagi mereka yang membutuhkan akses internet Cepat, tanpa Tersendat namun tetap Hemat.
+        Dengan layanan Internet Dedicated Kami, pengguna tidak perlu khawatir mengenai stabilitas dan kualitas akses internet.
+        Bandwidth Kami distribusikan kepada pelanggan secara mandiri (Dedicated) tanpa dibagi dengan pengguna lain (Shared/Upto/Broadband)
+        serta kecepatan upload dan download yang simetris 1:1 (bukan 1:4 atau 1:8).</string>
+    <string name="instalasi">Instalasi Jaringan Internet</string>
+    <string name="biaya">Biaya Pemasangan</string>
+    <string name="deskripsi_paket">Deskripsi Paket</string>
+    <string name="paket_internet_detail">• Paket Internet Conexa Breeze merupakan layanan internet rumah
+        \n• Kecepatan Layanan Internet dengan speed 5 Mbps ratio 1:1 (Dedicated)
+        \n• Biaya Instalasi dibebankan kepada pelanggan Baru
+        \n• Harga sudah termasuk PPN</string>
 
+    <string name="syarat_ketentuan">Syarat dan Ketentuan</string>
+    <string name="syarat_ketentuan_detail">1. Harga Paket berlaku di semua coverage area Conexa
+        \n2. Tagihan Internet akan ditagihkan pada tanggal 5
+        \n3. Pelanggan dapat menikmati layanan unlimited tanpa FUP
+        \n4. Pelanggan dapat menikmati layanan tanpa batasan kuota
+        \n5. Conexa menyediakan ONT selama berlangganan
+        \n6. Pelanggan dilarang menjual kembali layanan Conexa</string>
+
+
+    <string name="descChangePassword">For the security of your account, \nplease update your password if you wish.</string>
 </resources>

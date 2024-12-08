@@ -1,13 +1,18 @@
 package com.media.conexahotspot;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,12 +39,8 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.zip.Inflater;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link ProfilFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class ProfilFragment extends Fragment {
+    ActivityResultLauncher<Intent> resultLauncher;
 
 
 
@@ -58,7 +59,6 @@ public class ProfilFragment extends Fragment {
         fragment.setArguments(args);
         return fragment;
     }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,36 +71,8 @@ public class ProfilFragment extends Fragment {
 
 
         View view = inflater.inflate(R.layout.fragment_profil, container, false);
-
         TextView showName = view.findViewById(R.id.show_name);
         TextView showUsername = view.findViewById(R.id.show_username);
-        TextView showName2 = view.findViewById(R.id.name);
-        TextView showUsername2 = view.findViewById(R.id.username);
-        TextView showEmail = view.findViewById(R.id.email);
-        TextView showNohp = view.findViewById(R.id.nohp);
-        TextView showAddres = view.findViewById(R.id.addres);
-
-        if (getArguments() != null) {
-            String Name = getArguments().getString("name");
-            String Name2 = getArguments().getString("name");
-            String Username = getArguments().getString("username");
-            String Username2 = getArguments().getString("username");
-            String Email = getArguments().getString("email");
-            String Nohp = getArguments().getString("nohp");
-            String Addres = getArguments().getString("address");
-
-
-            showName.setText(Name);
-            showUsername.setText(Username);
-            showName2.setText(Name2);
-            showUsername2.setText(Username2);
-            showEmail.setText(Email);
-            showNohp.setText(Nohp);
-            showAddres.setText(Addres);
-        }
-
-
-
         ImageView showProfil = view.findViewById(R.id.edit_profile);
         ImageView showLocation = view.findViewById(R.id.edit_location);
         ImageView showPassword = view.findViewById(R.id.edit_password);
@@ -108,6 +80,54 @@ public class ProfilFragment extends Fragment {
         ImageView showContact = view.findViewById(R.id.contact);
         ImageView showAbout = view.findViewById(R.id.about);
 
+
+
+        String Name = getArguments().getString("name");
+        String Name2 = getArguments().getString("name");
+        String Username = getArguments().getString("username");
+        String Username2 = getArguments().getString("username");
+        String Email = getArguments().getString("email");
+        String Nohp = getArguments().getString("nohp");
+        String Addres = getArguments().getString("address");
+        String Password = getArguments().getString("password");
+
+        showName.setText(Name2);
+        showUsername.setText(Username2);
+
+        resultLauncher = registerForActivityResult(
+                new ActivityResultContracts.StartActivityForResult(),
+                result -> {
+                    if (result.getResultCode() == Activity.RESULT_OK) {
+                        Intent data = result.getData();
+                        if (data != null) {
+                            String updatedName = data.getStringExtra("name");
+                            String updatedUsername = data.getStringExtra("username");
+                            String updatedEmail = data.getStringExtra("email");
+                            String updatedNohp = data.getStringExtra("nohp");
+                            String updatedAddress = data.getStringExtra("address");
+
+
+                            showName.setText(updatedName);
+                            showUsername.setText(updatedUsername);
+
+                            Intent updatedDataIntent = new Intent();
+                            updatedDataIntent.putExtra("name", updatedName);
+                            updatedDataIntent.putExtra("username", updatedUsername);
+                            updatedDataIntent.putExtra("email", updatedEmail);
+                            updatedDataIntent.putExtra("nohp", updatedNohp);
+                            updatedDataIntent.putExtra("address", updatedAddress);
+                            requireActivity().setResult(Activity.RESULT_OK, updatedDataIntent);
+                        }
+                    }
+                }
+        );
+
+
+
+
+
+        FirebaseAuth auth = FirebaseAuth.getInstance();
+        FirebaseUser currentUser = auth.getCurrentUser();
 
 //        Goggle Options
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_GAMES_SIGN_IN)
@@ -121,7 +141,13 @@ public class ProfilFragment extends Fragment {
         showProfil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(requireActivity(), UpdateProfil.class);
+                Intent intent = new Intent(requireActivity(), AccountInfo.class);
+                intent.putExtra("name",Name);
+                intent.putExtra("username",Username);
+                intent.putExtra("email",Email);
+                intent.putExtra("nohp",Nohp);
+                intent.putExtra("address",Addres);
+                Log.d("ProfilFragment", "Launching AccountInfo with intent: " + intent.toString());
                 startActivity(intent);
             }
         });
@@ -133,10 +159,30 @@ public class ProfilFragment extends Fragment {
                 startActivity(intent);
             }
         });
+        showPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(requireActivity(), ChangePassword.class );
+                startActivity(intent);
+            }
+        });
         showContact.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(requireActivity(),ContactPerson.class);
+                intent.putExtra("name",Name);
+                intent.putExtra("username",Username);
+                intent.putExtra("email",Email);
+                intent.putExtra("nohp",Nohp);
+                intent.putExtra("address",Addres);
+                startActivity(intent);
+            }
+        });
+
+        showAbout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(requireActivity(), AboutUsActivity.class);
                 startActivity(intent);
             }
         });
@@ -175,8 +221,8 @@ public class ProfilFragment extends Fragment {
         });
 
         return view;
-
-
-
     }
+
+
+
 }

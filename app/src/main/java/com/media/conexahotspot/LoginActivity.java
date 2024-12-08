@@ -3,6 +3,7 @@ package com.media.conexahotspot;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -35,6 +36,7 @@ import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -49,7 +51,6 @@ public class LoginActivity extends AppCompatActivity {
     FirebaseAuth mAuth;
     GoogleSignInClient mGoogleSignInClient;
 
-    // Autentikasi menggunakan Akun Goggle
 
     private final ActivityResultLauncher<Intent> mStartForResult = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
         @Override
@@ -64,35 +65,42 @@ public class LoginActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
                                 mAuth = FirebaseAuth.getInstance();
-                                GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(LoginActivity.this);
-                                String email = account.getEmail();
+                                FirebaseUser currentUser = mAuth.getCurrentUser();
+                                String email = currentUser.getEmail();
+                                String userId = currentUser.getUid();
+                                String Name = currentUser.getDisplayName();
 
                                 DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users");
-                                Query query = reference.orderByChild("email").equalTo(email);
+                                Query query = reference.child(userId);
                                 query.addListenerForSingleValueEvent(new ValueEventListener() {
                                     @Override
                                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                                         if (snapshot.exists()) {
-                                            for (DataSnapshot userSnapshot : snapshot.getChildren()) {
-                                                String usernameFromDb = userSnapshot.child("username").getValue(String.class);
-                                                String nameFromDb = userSnapshot.child("name").getValue(String.class);
-
-
-                                                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                                                intent.putExtra("name", nameFromDb);
-                                                intent.putExtra("email", email);
-                                                intent.putExtra("username", usernameFromDb);
-                                                startActivity(intent);
-                                                Toast.makeText(LoginActivity.this, "Login berhasil", Toast.LENGTH_SHORT).show();
-                                            }
+                                            String usernameFromDb = snapshot.child("username").getValue(String.class);
+                                            String nameFromDb = snapshot.child("name").getValue(String.class);
+                                            String nohpFromDb = String.valueOf(snapshot.child("notelp")
+                                                    .getValue(String.class) != null ? snapshot.child("notelp")
+                                                    .getValue(String.class) : "Belum Diisi");
+                                            String addressFromDb = snapshot.child("address")
+                                                    .getValue(String.class) != null ? snapshot
+                                                    .child("address")
+                                                    .getValue(String.class) : "Belum Diisi";
+                                            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                                            intent.putExtra("name", nameFromDb);
+                                            intent.putExtra("email", email);
+                                            intent.putExtra("username", usernameFromDb);
+                                            intent.putExtra("nohp", nohpFromDb);
+                                            intent.putExtra("address", addressFromDb);
+                                            startActivity(intent);
+                                            Toast.makeText(LoginActivity.this, "Login berhasil", Toast.LENGTH_SHORT).show();
                                         } else {
-                                            Toast.makeText(LoginActivity.this, "Email tidak terdaftar. Silakan daftar terlebih dahulu.", Toast.LENGTH_LONG).show();
+                                            Toast.makeText(LoginActivity.this, "User tidak ditemukan", Toast.LENGTH_LONG).show();
                                         }
                                     }
 
                                     @Override
                                     public void onCancelled(@NonNull DatabaseError error) {
-                                        Toast.makeText(LoginActivity.this, "Terjadi kesalahan saat memeriksa email", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(LoginActivity.this, "Terjadi kesalahan saat memeriksa data", Toast.LENGTH_SHORT).show();
                                     }
                                 });
                             } else {
@@ -102,6 +110,7 @@ public class LoginActivity extends AppCompatActivity {
                     });
                 } catch (ApiException e) {
                     e.printStackTrace();
+                    Toast.makeText(LoginActivity.this, "Google sign-in failed", Toast.LENGTH_SHORT).show();
                 }
             }
         }
@@ -190,10 +199,14 @@ public class LoginActivity extends AppCompatActivity {
                                         String nameFromDB = userSnapshot.child("name").getValue(String.class);
                                         String emailFromDB = userSnapshot.child("email").getValue(String.class);
                                         String usernameFromDB = userSnapshot.child("username").getValue(String.class);
-                                        String noHpFromDB = userSnapshot.child("nohp").getValue(Long.class).toString();
-                                        String addresFromDB = userSnapshot.child("address").getValue(String.class);
-
-
+                                        String noHpFromDB = String.valueOf(userSnapshot.child("notelp")
+                                                .getValue(String.class) != null ? userSnapshot
+                                                .child("notelp")
+                                                .getValue(String.class) : "Belum Diisi");
+                                        String addresFromDB = userSnapshot.child("address")
+                                                .getValue(String.class)!= null ? userSnapshot
+                                                .child("address")
+                                                .getValue(String.class) : "Belum Diisi";
                                         showSuccesDialog(nameFromDB,emailFromDB,usernameFromDB,passwordFromDb,noHpFromDB,addresFromDB);
 
                                         return;
@@ -218,9 +231,14 @@ public class LoginActivity extends AppCompatActivity {
                                                     String nameFromDB = userSnapshot.child("name").getValue(String.class);
                                                     String emailFromDB = userSnapshot.child("email").getValue(String.class);
                                                     String usernameFromDB = userSnapshot.child("username").getValue(String.class);
-                                                    String nohpFromDB = userSnapshot.child("nohp").getValue(Long.class).toString();
-                                                    String addresFromDB = userSnapshot.child("address").getValue(String.class);
-
+                                                    String nohpFromDB = String.valueOf(userSnapshot.child("notelp")
+                                                            .getValue(String.class) != null ? userSnapshot
+                                                            .child("notelp")
+                                                            .getValue(String.class) : "Belum Diisi");
+                                                    String addresFromDB = userSnapshot.child("address")
+                                                            .getValue(String.class)!= null ? userSnapshot
+                                                            .child("address")
+                                                            .getValue(String.class) : "Belum Diisi";
                                                     showSuccesDialog(nameFromDB,emailFromDB,usernameFromDB,passwordFromDb,nohpFromDB,addresFromDB);
 
                                                     isPasswordCorrect = true;
@@ -266,11 +284,6 @@ public class LoginActivity extends AppCompatActivity {
             }
 
         });
-
-
-
-
-
 
         GotoRegister.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailPaket">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <FrameLayout
+            app:layout_constraintTop_toTopOf="@id/frame"
+            android:id="@+id/frame"
+            android:background="@color/bluedark"
+            android:layout_width="match_parent"
+            android:layout_height="90dp">
+            <ImageView
+                android:id="@+id/back"
+                android:layout_marginTop="56dp"
+                android:layout_marginStart="20dp"
+                android:background="@color/bluedark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_arrow_back_ios_24"/>
+            <TextView
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/poppins_bold"
+                android:layout_marginTop="50dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Detail Paket"/>
+        </FrameLayout>
+        <RelativeLayout
+            android:id="@+id/conten"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/frame">
+            <LinearLayout
+                android:id="@+id/linear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginVertical="22dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/biaya"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_bold"
+                        android:text="@string/biaya"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/instalasi"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="@string/instalasi" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/biaya_pemasangan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Biaya Pemasangan"
+                    android:textAlignment="center"
+                    android:textSize="18sp" />
+            </LinearLayout>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_below="@id/linear"
+                android:layout_marginHorizontal="22dp"
+                app:cardCornerRadius="16dp"
+                app:cardBackgroundColor="@color/bluedark">
+                <ImageView
+                    android:layout_gravity="end"
+                    android:id="@+id/detail_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"/>
+                <LinearLayout
+                    android:padding="26dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:layout_weight="1">
+                        <TextView
+                            android:id="@+id/nama_paket"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Coneaxa"
+                            android:textSize="16sp"
+                            android:fontFamily="@font/poppins_bold"
+                            android:textColor="@color/white"/>
+                        <TextView
+                            android:id="@+id/p_inet"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="5 MPS"
+                            android:fontFamily="@font/poppins_medium"
+                            android:textColor="@color/white"/>
+                    </LinearLayout>
+                    <TextView
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="2"
+                        android:id="@+id/harga"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Rp. 120.000"
+                        android:fontFamily="@font/poppins_medium"
+                        android:textColor="@color/white"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/card"
+                android:layout_marginHorizontal="22dp"
+                android:layout_marginVertical="22dp"
+                android:backgroundTint="@color/bluedark"
+                app:cardCornerRadius="16dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="10dp">
+                    <LinearLayout
+                        android:id="@+id/linear2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginTop="16dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tex_paket"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="@string/deskripsi_paket"
+                            android:textColor="@color/white"
+                            android:textSize="16sp" />
+
+                        <ImageView
+                            android:id="@+id/klik"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="5"
+                            android:src="@drawable/baseline_keyboard_arrow_down_24" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/linear3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/linear2"
+                        android:layout_marginHorizontal="32dp"
+                        android:orientation="vertical">
+                        <TextView
+                            android:id="@+id/deskripsi_paket"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/poppins_medium"
+                            android:justificationMode="none"
+                            android:lineSpacingExtra="1dp"
+                            android:text="@string/paket_internet_detail"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/white"
+                            android:visibility="gone" />
+                    </LinearLayout>
+                    <View
+                        android:id="@+id/line"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@id/linear3"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginVertical="10dp"
+                        android:background="@color/dark_grey" />
+
+                    <LinearLayout
+                        android:id="@+id/linear5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/line"
+                        android:layout_marginHorizontal="16dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="@string/syarat_ketentuan"
+                            android:textColor="@color/white"
+                            android:textSize="16sp" />
+                        <ImageView
+                            android:id="@+id/klik2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="5"
+                            android:src="@drawable/baseline_keyboard_arrow_down_24" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/linear4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/linear5"
+                        android:layout_marginHorizontal="32dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/syarat_ketentuan"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/poppins_medium"
+                            android:lineSpacingExtra="1dp"
+                            android:text="@string/syarat_ketentuan_detail"
+                            android:textColor="@color/white"
+                            android:visibility="gone" />
+                    </LinearLayout>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+        </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@color/bluedark"
+        android:orientation="vertical"
+        android:paddingBottom="26dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/constraint"
+        app:layout_constraintVertical_bias="1.0"
+        tools:layout_editor_absoluteX="16dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="22dp"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Total Biaya"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/total"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Rp 320.000"
+                android:textAlignment="textEnd"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+        </LinearLayout>
+        <Button
+            android:id="@+id/btn_daftar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="22dp"
+            android:backgroundTint="@color/orange"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Daftar"
+            android:textColor="@color/white" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

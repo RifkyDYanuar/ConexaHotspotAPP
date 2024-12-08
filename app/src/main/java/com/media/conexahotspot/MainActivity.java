@@ -1,5 +1,6 @@
 package com.media.conexahotspot;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -8,6 +9,8 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
@@ -27,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     FirebaseAuth auth;
     Button btn_logout;
     BottomNavigationView bottomNavigationView;
+    ActivityResultLauncher<Intent> resultLauncher;
     private long backPressedTime;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +43,24 @@ public class MainActivity extends AppCompatActivity {
         String Email = intent.getStringExtra("email");
         String Nohp = intent.getStringExtra("nohp");
         String Addres = intent.getStringExtra("address");
+
+        resultLauncher = registerForActivityResult(
+                new ActivityResultContracts.StartActivityForResult(),
+                result -> {
+                    if (result.getResultCode() == Activity.RESULT_OK) {
+                        Intent data = result.getData();
+                        if (data != null) {
+                            String updatedName = data.getStringExtra("name");
+                            String updatedUsername = data.getStringExtra("username");
+
+                            Fragment currentFragment = getSupportFragmentManager().findFragmentById(R.id.fragment_content);
+                            if (currentFragment instanceof HomeFragment) {
+                                ((HomeFragment) currentFragment).updateProfileData(updatedName, updatedUsername);
+                            }
+                        }
+                    }
+                }
+        );
 
 
         bottomNavigationView = findViewById(R.id.menu_navbottom);

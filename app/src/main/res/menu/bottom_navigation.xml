@@ -4,12 +4,12 @@
         android:id="@+id/home"
         android:enabled="true"
         android:icon="@drawable/baseline_dashboard_24"
-        android:title="Beranda"/>
+        android:title="Dashboard"/>
     <item
         android:id="@+id/page_2"
         android:enabled="true"
         android:icon="@drawable/baseline_receipt_24"
-        android:title="Riwayat"/>
+        android:title="History"/>
     <item
         android:id="@+id/page_3"
         android:enabled="false"
@@ -20,10 +20,10 @@
         android:id="@+id/page_4"
         android:enabled="true"
         android:icon="@drawable/baseline_help_outline_24"
-        android:title="Layanan"/>
+        android:title="Services"/>
     <item
         android:id="@+id/page_5"
         android:enabled="true"
         android:icon="@drawable/baseline_manage_accounts_24"
-        android:title="Profil"/>
+        android:title="Profile"/>
 </menu>
