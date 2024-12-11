@@ -76,7 +76,7 @@ public class ProfilFragment extends Fragment {
         ImageView showProfil = view.findViewById(R.id.edit_profile);
         ImageView showLocation = view.findViewById(R.id.edit_location);
         ImageView showPassword = view.findViewById(R.id.edit_password);
-        Button showLogout = view.findViewById(R.id.logout);
+        ImageView showLogout = view.findViewById(R.id.logout);
         ImageView showContact = view.findViewById(R.id.contact);
         ImageView showAbout = view.findViewById(R.id.about);
 

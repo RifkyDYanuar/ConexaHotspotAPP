@@ -66,7 +66,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
-                android:text="Name"
+                android:text="Profil Name"
                 android:fontFamily="@font/poppins_bold"/>
             <TextView
                 android:id="@+id/show_name"
@@ -247,10 +247,10 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:text="@string/AppVersi"
         android:layout_alignParentBottom="true"
-        android:fontFamily="@font/poppins_bold"
-        android:layout_marginBottom="20dp"/>
+        android:layout_marginBottom="32dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="@string/AppVersi"
+        android:textAlignment="center" />
 
 </RelativeLayout>

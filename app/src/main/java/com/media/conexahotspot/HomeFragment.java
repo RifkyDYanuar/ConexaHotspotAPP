@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.core.widget.NestedScrollView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -53,6 +54,7 @@ public class HomeFragment extends Fragment {
     Handler handler;
     RecyclerView recyclerView;
 
+
     public HomeFragment() {
         // Required empty public constructor
     }
@@ -84,6 +86,8 @@ public class HomeFragment extends Fragment {
         ImageView notifIcon = view.findViewById(R.id.notif_icon);
         TextView txtName = view.findViewById(R.id.show_username);
         ProgressBar loading = view.findViewById(R.id.progress_bar);
+        CardView HLite = view.findViewById(R.id.hotspot_lite);
+        CardView HPro   = view.findViewById(R.id.hotspot_pro);
         loading.setVisibility(View.VISIBLE);
 
         if (getArguments() != null) {
@@ -100,6 +104,21 @@ public class HomeFragment extends Fragment {
                     txtName.setTextColor(Color.WHITE);
                     notifIcon.setColorFilter(Color.WHITE);
                 }
+            }
+        });
+
+        HLite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(requireActivity(), DetailPaket.class);
+                startActivity(intent);
+            }
+        });
+        HPro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(requireActivity(),DetailPaket.class);
+                startActivity(intent);
             }
         });
 
@@ -144,12 +163,6 @@ public class HomeFragment extends Fragment {
                 Log.e("FirebaseError", error.getMessage());
             }
         });
-
-
-
-
-
-
 
         Handler handler = new Handler();
         Runnable runnable = new Runnable() {

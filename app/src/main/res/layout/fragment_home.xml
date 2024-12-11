@@ -252,6 +252,7 @@
                      android:orientation="horizontal"
                      android:layout_gravity="bottom">
                      <androidx.cardview.widget.CardView
+                         android:id="@+id/hotspot_lite"
                          android:layout_marginBottom="20dp"
                          android:layout_marginHorizontal="20dp"
                          android:layout_width="match_parent"
@@ -267,7 +268,7 @@
                              <ImageView
                                  android:layout_width="wrap_content"
                                  android:layout_height="wrap_content"
-                                 android:src="@drawable/baseline_location_on_24"
+                                 android:src="@drawable/outline_location_on_24"
                                  android:layout_margin="14dp"/>
 
                              <TextView
@@ -295,6 +296,7 @@
                          </LinearLayout>
                      </androidx.cardview.widget.CardView>
                      <androidx.cardview.widget.CardView
+                         android:id="@+id/hotspot_pro"
                          android:layout_marginBottom="20dp"
                          android:layout_marginHorizontal="20dp"
                          android:layout_weight="1"
@@ -309,7 +311,7 @@
                              <ImageView
                                  android:layout_width="wrap_content"
                                  android:layout_height="wrap_content"
-                                 android:src="@drawable/baseline_location_on_24"
+                                 android:src="@drawable/outline_location_on_24"
                                  android:layout_margin="14dp"/>
 
                              <TextView
@@ -364,7 +366,7 @@
                              <ImageView
                                  android:layout_width="wrap_content"
                                  android:layout_height="wrap_content"
-                                 android:src="@drawable/baseline_location_on_24"
+                                 android:src="@drawable/outline_location_on_24"
                                  android:layout_margin="14dp"/>
 
                              <TextView
@@ -406,7 +408,7 @@
                              <ImageView
                                  android:layout_width="wrap_content"
                                  android:layout_height="wrap_content"
-                                 android:src="@drawable/baseline_location_on_24"
+                                 android:src="@drawable/outline_location_on_24"
                                  android:layout_margin="14dp"/>
 
                              <TextView
@@ -476,7 +478,7 @@
                     android:id="@+id/profil"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/baseline_person_24" />
+                    android:src="@drawable/user_new" />
 
                 <LinearLayout
                     android:layout_width="match_parent"

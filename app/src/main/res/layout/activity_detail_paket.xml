@@ -69,7 +69,6 @@
                         android:fontFamily="@font/poppins_medium"
                         android:text="@string/instalasi" />
                 </LinearLayout>
-
                 <TextView
                     android:id="@+id/biaya_pemasangan"
                     android:layout_width="match_parent"
@@ -92,7 +91,8 @@
                     android:layout_gravity="end"
                     android:id="@+id/detail_image"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"/>
+                    android:layout_height="match_parent"
+                    android:src="@drawable/cable2"/>
                 <LinearLayout
                     android:padding="26dp"
                     android:layout_width="match_parent"

@@ -47,7 +47,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/exchange" />
+        app:srcCompat="@drawable/update_user" />
 
     <EditText
         android:drawableStart="@drawable/baseline_person_outline_24"
@@ -63,7 +63,7 @@
         android:layout_marginTop="24dp" />
 
     <EditText
-        android:drawableStart="@drawable/baseline_email_24"
+        android:drawableStart="@drawable/outline_email_32"
         android:id="@+id/email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -88,7 +88,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="16dp" />
     <EditText
-        android:drawableStart="@drawable/baseline_local_phone_24"
+        android:drawableStart="@drawable/outline_call_24"
         android:id="@+id/notelepon"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -114,5 +114,15 @@
         app:layout_constraintRight_toRightOf="parent"
         android:drawableLeft="@drawable/outline_edit_24"
         app:layout_constraintTop_toBottomOf="@id/notelepon" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="32dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="@string/AppVersi"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

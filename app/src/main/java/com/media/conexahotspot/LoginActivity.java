@@ -171,15 +171,17 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String username = Username.getText().toString().trim();
                 String password = Password.getText().toString().trim();
-
-                if (username.isEmpty()) {
-                    Username.setError("Eror");
+                if (password.isEmpty() && username.isEmpty()) {
+                    String Message = "Username dan Password \ntidak boleh kosong";
+                    showLoginError(Message);
+                }else if (username.isEmpty()) {
+                    Username.setError("Username Tidak boleh kosong");
                     Username.requestFocus();
 
-                }if(password.isEmpty()) {
+                }else if(password.isEmpty()) {
                     Password.setError("Password tidak boleh kosong");
                     Password.requestFocus();
-                }else{
+                }  else{
                     DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users");
                     Query chekUser = reference.orderByChild("username").equalTo(username);
                     chekUser.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -326,7 +328,6 @@ public class LoginActivity extends AppCompatActivity {
 
         },2000);
     }
-
     private void showDialogError(String usernameErrorMessage , String passwordErrorMessage){
         LinearLayout layout = findViewById(R.id.erordialog);
         View view = LayoutInflater.from(LoginActivity.this).inflate(R.layout.alert_error,layout);
@@ -352,6 +353,20 @@ public class LoginActivity extends AppCompatActivity {
         alertDialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
         alertDialog.setView(view);
         alertDialog.show();
+    }
+
+    private void showLoginError(String Message){
+        LinearLayout layout = findViewById(R.id.erordialog);
+        View view = LayoutInflater.from(LoginActivity.this).inflate(R.layout.alert_login_error,layout);
+        TextView content = view.findViewById(R.id.content);
+        content.setText(Message);
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
+        final AlertDialog alertDialog = builder.create();
+        alertDialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+        alertDialog.setView(view);
+        alertDialog.show();
+
     }
 }
 

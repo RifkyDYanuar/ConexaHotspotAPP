@@ -68,10 +68,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="3"
-            android:src="@drawable/baseline_email_24" />
+            android:src="@drawable/outline_email_32" />
 
         <TextView
-            android:layout_gravity="bottom"
+            android:layout_gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -126,7 +126,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="3"
-            android:src="@drawable/baseline_local_phone_24" />
+            android:src="@drawable/outline_call_24" />
         <TextView
             android:layout_gravity="bottom"
             android:layout_width="match_parent"
@@ -141,11 +141,13 @@
             android:layout_height="wrap_content"
             android:src="@drawable/baseline_arrow_forward_ios_24" />
     </LinearLayout>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/AppVersi"
-        android:fontFamily="@font/poppins_bold"
         android:layout_alignParentBottom="true"
+        android:layout_marginBottom="32dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="@string/AppVersi"
         android:textAlignment="center"/>
 </RelativeLayout>
