@@ -282,6 +282,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="Logout"
+                                android:textColor="@color/orange"
                                 android:fontFamily="@font/poppins_medium"
                                 android:layout_margin="20dp"/>
                             <ImageView

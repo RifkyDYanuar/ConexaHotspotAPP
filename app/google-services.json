@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "938060840044",
+    "firebase_url": "https://conexa-hotspot-default-rtdb.firebaseio.com",
     "project_id": "conexa-hotspot",
     "storage_bucket": "conexa-hotspot.firebasestorage.app"
   },
@@ -12,7 +13,20 @@
           "package_name": "com.media.conexahotspot"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "938060840044-eeifr07meivk4af9hiau498q4hprfoeh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.media.conexahotspot",
+            "certificate_hash": "7a5e0415f4fe65be2f58b99981865578443f5134"
+          }
+        },
+        {
+          "client_id": "938060840044-m5vvv2008l514o953bphe5t1o59p06ej.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyC-WPLGO6iqGG4ICwQrGtEQemmee1b5yjw"
@@ -20,7 +34,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "938060840044-m5vvv2008l514o953bphe5t1o59p06ej.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }
