@@ -31,6 +31,7 @@
             android:textSize="20dp"
             android:textColor="@color/succes"/>
         <TextView
+            android:id="@+id/title"
             android:layout_marginTop="160dp"
             android:layout_width="match_parent"
             android:textAlignment="center"

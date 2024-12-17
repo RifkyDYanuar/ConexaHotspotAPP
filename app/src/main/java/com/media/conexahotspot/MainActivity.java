@@ -81,7 +81,6 @@ public class MainActivity extends AppCompatActivity {
                 }else if(item.getItemId() == R.id.page_5){
                     pilihFragment = ProfilFragment.newInstance(Name,Username,Email,Nohp,Addres);
                 }
-
                 if(pilihFragment != null){
                     getSupportFragmentManager()
                             .beginTransaction()
@@ -90,16 +89,19 @@ public class MainActivity extends AppCompatActivity {
                             .commit();
                     return true;
                 }
-
                 return false;
 
             }
         });
 
-
-
-
-
+        String fragment = intent.getStringExtra("fragment");
+        if (fragment != null && fragment.equals("profil")) {
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out)
+                    .replace(R.id.fragment_content, ProfilFragment.newInstance(Name, Username, Email, Nohp, Addres))
+                    .commit();
+        }
     }
     public void onBackPressed() {
         if (backPressedTime + 2000 > System.currentTimeMillis()) {
@@ -109,8 +111,6 @@ public class MainActivity extends AppCompatActivity {
         } else {
             Toast.makeText(this, "Tekan sekali lagi untuk keluar", Toast.LENGTH_SHORT).show();
         }
-
         backPressedTime = System.currentTimeMillis();
     }
-
 }

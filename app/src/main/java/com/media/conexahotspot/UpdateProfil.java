@@ -55,6 +55,7 @@ public class UpdateProfil extends AppCompatActivity {
         String Email = intent.getStringExtra("email");
         String Nohp = intent.getStringExtra("nohp");
 
+
         if(intent != null){
             txtName.setText(Nama);
             txtUsername.setText(Username);

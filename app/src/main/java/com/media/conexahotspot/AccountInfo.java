@@ -62,6 +62,7 @@ public class AccountInfo extends AppCompatActivity {
             resultIntent.putExtra("username", Name);
             resultIntent.putExtra("email", Name);
             resultIntent.putExtra("nohp", Name);// Data yang diperbarui
+            resultIntent.putExtra("address", Name);
             setResult(Activity.RESULT_OK, resultIntent);
 
 

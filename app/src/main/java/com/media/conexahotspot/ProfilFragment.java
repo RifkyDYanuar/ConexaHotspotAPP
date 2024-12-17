@@ -156,6 +156,7 @@ public class ProfilFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(requireActivity(), UpdateAdress.class);
+                intent.putExtra("password",Password);
                 startActivity(intent);
             }
         });

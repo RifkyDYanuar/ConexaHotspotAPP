@@ -7,7 +7,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".UpdateAdress">
-
     <FrameLayout
         android:background="@color/bluedark"
         android:layout_width="match_parent"
@@ -16,7 +15,6 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-
         <ImageView
             android:id="@+id/back"
             android:layout_marginTop="56dp"
@@ -47,30 +45,47 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/location" />
-
+    <TextView
+        android:id="@+id/addres"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Address"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageView2" />
     <EditText
+        android:padding="10dp"
+        android:gravity="left|top"
         android:id="@+id/alamat"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
-        android:hint="Address"
-        android:inputType="textPostalAddress"
-        app:layout_constraintTop_toBottomOf="@id/imageView2"
+        android:inputType="textMultiLine"
+        app:layout_constraintTop_toBottomOf="@id/addres"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="24dp" />
+        android:layout_marginTop="24dp"
+        android:background="@drawable/text_area"/>
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="280dp"
-        android:layout_height="52dp"
+        android:id="@+id/btn_addres"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
         android:layout_marginTop="100dp"
+        android:background="@drawable/button_custom"
+        android:drawableLeft="@drawable/outline_edit_24"
         android:text="Update Address"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/alamat"
-        android:background="@drawable/button_custom"/>
+        app:layout_constraintVertical_bias="0.691" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -79,5 +94,4 @@
         android:fontFamily="@font/poppins_medium"
         android:layout_marginBottom="32dp"
         app:layout_constraintBottom_toBottomOf="parent"/>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
