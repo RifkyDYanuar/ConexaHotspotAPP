@@ -88,8 +88,6 @@ public class ChangePassword extends AppCompatActivity {
                                 if (task.isSuccessful()) {
                                     String Message = "Password berhasil diperbarui";
                                     showSuccesDialog(Message);
-
-                                    // Kirim data ke MainActivity
                                     Intent intent = new Intent(ChangePassword.this, MainActivity.class);
                                     intent.putExtra("fragment", "profil");
                                     intent.putExtra("name", name);
