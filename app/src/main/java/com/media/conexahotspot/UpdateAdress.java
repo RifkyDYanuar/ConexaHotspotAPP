@@ -67,7 +67,7 @@ public class UpdateAdress extends AppCompatActivity {
 
                                 if(address != null){
                                     reference.child("address").setValue(Alamat).addOnCompleteListener(task -> {
-                                                Toast.makeText(UpdateAdress.this, "Alamat Berhasil Diperbarui", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(UpdateAdress.this, "Alamat Berhasil Diperbarui", Toast.LENGTH_SHORT).show();
                                         Intent intent = new Intent(UpdateAdress.this, MainActivity.class);
                                         intent.putExtra("fragment", "profil");
                                         intent.putExtra("name", name);

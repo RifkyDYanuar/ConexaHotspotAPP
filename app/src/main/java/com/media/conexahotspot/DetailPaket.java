@@ -36,8 +36,9 @@ import java.util.Locale;
 
 public class DetailPaket extends AppCompatActivity {
     TextView descPaket, SyaratKet;
-    ImageView toggleKlik, toggleKlik2;
+    ImageView toggleKlik, toggleKlik2, Back;
     CardView cardView ;
+
     private boolean isDescPaket = false;
     private boolean isSyaratKet = false;
     int Height = 450;
@@ -53,6 +54,7 @@ public class DetailPaket extends AppCompatActivity {
         toggleKlik = findViewById(R.id.klik);
         toggleKlik2 = findViewById(R.id.klik2);
         cardView = findViewById(R.id.card2);
+        Back = findViewById(R.id.back);
         TextView nama = findViewById(R.id.nama_paket);
         TextView harga_paket = findViewById(R.id.harga);
         TextView p_inet = findViewById(R.id.p_inet);
@@ -131,6 +133,14 @@ public class DetailPaket extends AppCompatActivity {
             }
         });
 
+        Back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+        
+
 
     }
     private void allCardView() {
@@ -165,4 +175,6 @@ public class DetailPaket extends AppCompatActivity {
         });
         animator.start();
     }
+
+
 }

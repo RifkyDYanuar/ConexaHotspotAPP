@@ -175,7 +175,7 @@
                                  android:textSize="10sp"
                                  android:layout_width="match_parent"
                                  android:layout_height="wrap_content"
-                                 android:text="Upragde"
+                                 android:text="Upgrade"
                                  android:textAlignment="center"
                                  android:fontFamily="@font/poppins_bold"/>
 

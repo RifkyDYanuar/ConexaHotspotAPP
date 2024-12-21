@@ -16,6 +16,15 @@
         android:theme="@style/Theme.ConexaHotspot"
         tools:targetApi="31">
         <activity
+            android:name=".ConexaNotification"
+            android:exported="false" />
+        <activity
+            android:name=".ConexaPaket"
+            android:exported="false" />
+        <activity
+            android:name=".InetLateActivity"
+            android:exported="false" />
+        <activity
             android:name=".DetailPaket"
             android:exported="true" />
         <activity
@@ -58,12 +67,9 @@
             android:name=".MainActivity"
             android:exported="true" />
 
-
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
-
-
     </application>
 
 </manifest>

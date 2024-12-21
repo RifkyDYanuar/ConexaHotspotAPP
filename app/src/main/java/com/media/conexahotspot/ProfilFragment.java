@@ -10,6 +10,7 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import android.util.Log;
@@ -73,12 +74,12 @@ public class ProfilFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_profil, container, false);
         TextView showName = view.findViewById(R.id.show_name);
         TextView showUsername = view.findViewById(R.id.show_username);
-        ImageView showProfil = view.findViewById(R.id.edit_profile);
-        ImageView showLocation = view.findViewById(R.id.edit_location);
-        ImageView showPassword = view.findViewById(R.id.edit_password);
-        ImageView showLogout = view.findViewById(R.id.logout);
-        ImageView showContact = view.findViewById(R.id.contact);
-        ImageView showAbout = view.findViewById(R.id.about);
+        CardView showProfil = view.findViewById(R.id.btn_profile);
+        CardView showLocation = view.findViewById(R.id.btn_location);
+        CardView showPassword = view.findViewById(R.id.btn_password);
+        CardView showLogout = view.findViewById(R.id.btn_logout);
+        CardView showContact = view.findViewById(R.id.btn_contact);
+        CardView showAbout = view.findViewById(R.id.btn_about);
 
 
 

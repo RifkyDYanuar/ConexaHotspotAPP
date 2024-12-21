@@ -28,6 +28,9 @@ public class AccountInfo extends AppCompatActivity {
     TextView showName, showUsername, showEmail, showNohp, showAddres;
     Button GoUpdate;
     ImageView back;
+    FirebaseAuth auth;
+    FirebaseUser user;
+    DatabaseReference userRef;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +44,39 @@ public class AccountInfo extends AppCompatActivity {
         showAddres = findViewById(R.id.show_addres);
         GoUpdate = findViewById(R.id.update);
         back = findViewById(R.id.back);
+
+        auth = FirebaseAuth.getInstance();
+        user = auth.getCurrentUser();
+        if (user != null) {
+            userRef = FirebaseDatabase.getInstance().getReference("Users").child(user.getUid());
+            userRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    if (snapshot.exists()) {
+                        String name = snapshot.child("name").getValue(String.class);
+                        String username = snapshot.child("username").getValue(String.class);
+                        String email = snapshot.child("email").getValue(String.class);
+                        String nohp = snapshot.child("notelp").getValue(String.class);
+                        String address = snapshot.child("address").getValue(String.class);
+                        showName.setText(name != null ? name : "Belum diisi");
+                        showUsername.setText(username != null ? username : "Belum diisi");
+                        showEmail.setText(email != null ? email : "Belum diisi");
+                        showNohp.setText(nohp != null ? nohp : "Belum diisi");
+                        showAddres.setText(address != null ? address : "Belum diisi");
+                    } else {
+                        Toast.makeText(AccountInfo.this, "Data pengguna tidak ditemukan!", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+                    Toast.makeText(AccountInfo.this, "Gagal memuat data: " + error.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            });
+        } else {
+            Toast.makeText(this, "Pengguna tidak terautentikasi!", Toast.LENGTH_SHORT).show();
+            finish();
+        }
 
         Intent intent = getIntent();
         if (getIntent()!= null) {
@@ -58,15 +94,15 @@ public class AccountInfo extends AppCompatActivity {
 
 
             Intent resultIntent = new Intent();
-            resultIntent.putExtra("name", Name);  // Data yang diperbarui
+            resultIntent.putExtra("name", Name);
             resultIntent.putExtra("username", Name);
             resultIntent.putExtra("email", Name);
-            resultIntent.putExtra("nohp", Name);// Data yang diperbarui
+            resultIntent.putExtra("nohp", Name);
             resultIntent.putExtra("address", Name);
             setResult(Activity.RESULT_OK, resultIntent);
 
-
         }
+
 
 
 

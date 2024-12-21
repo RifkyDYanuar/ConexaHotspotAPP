@@ -65,7 +65,21 @@
         \n4. Pelanggan dapat menikmati layanan tanpa batasan kuota
         \n5. Conexa menyediakan ONT selama berlangganan
         \n6. Pelanggan dilarang menjual kembali layanan Conexa</string>
-
-
     <string name="descChangePassword">For the security of your account, \nplease update your password if you wish.</string>
+    <string name="internet_los">
+        1. \tPastikan tidak ada aplikasi berat( seperti download \n\tatau Streaming ) yang sedang berjalan.\n2. Matikan sementara perangkat lain yang terhubung \n\tke jaringan untuk memastikan bandwidth tidak \n\tterbagi.\n3. Lakukan tes kecepatan internet melalui aplikasi atau \n\tsitus speed test.\n4. Jika masih terasa lambat lakukan Restart trouter/\n\tmodem untuk menyegarkan koneksi.\n
+    </string>
+    <string name="not_koneksi">1. Pastikan perangkat terhubung ke jaringan Wi-Fi atau \n\tkabel LAN.
+\n2. Jika menggunakan Wi-Fi, periksa apakah nama \n\tjaringan Wi-Fi (SSID) muncul di perangkat.
+\n3. Jika menggunakan kabel LAN, periksa apakah kabel \n\tterpasang dengan baik di router dan perangkat.
+\n4. Restart perangkat yang digunakan (ponsel, laptop, \n\tatau PC).</string>
+    <string name="lampu_merah">1. Cek kabel fiber optic (FO) dari terminal optik hingga \n\trouter untuk memastikan tidak ada kabel yang \n\ttertekuk, patah, atau lepas.
+                \n2. Pastikan konektor Kabel Fiber bersih dan terpasang \n\tdengan benar.
+                \n3. Restart router atau modem
+                \n4. Jika masalah berlanjut, hubungi teknisi Conexa</string>
+    <string name="internet_lambat">Internet terasa lambat?</string>
+    <string name="speed">Speed Test</string>
+    <string name="sk">Setuju dengan Syarat dan Ketentuan yang berlaku.</string>
 </resources>
+
+
