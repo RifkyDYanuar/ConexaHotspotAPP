@@ -50,6 +50,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/frame" />
 
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/all_paket"
         android:layout_width="match_parent"
