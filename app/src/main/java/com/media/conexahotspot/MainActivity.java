@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -27,6 +28,7 @@ import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
+    ImageView centerButton;
     FirebaseAuth auth;
     Button btn_logout;
     BottomNavigationView bottomNavigationView;
@@ -37,6 +39,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
+        centerButton = findViewById(R.id.center_button);
+        centerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ConexaPaket.class);
+                startActivity(intent);
+            }
+        });
         Intent intent = getIntent();
         String Name= intent.getStringExtra("name");
         String Username = intent.getStringExtra("username");
