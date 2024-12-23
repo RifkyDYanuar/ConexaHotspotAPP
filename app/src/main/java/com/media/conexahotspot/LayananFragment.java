@@ -51,6 +51,9 @@ public class LayananFragment extends Fragment {
         LinearLayout btnInetLate = view.findViewById(R.id.btn_1);
         LinearLayout btnNotConn = view.findViewById(R.id.btn_2);
         LinearLayout btnLampuLos = view.findViewById(R.id.btn_3);
+        LinearLayout btnEmail = view.findViewById(R.id.go_email);
+        LinearLayout btnLocation = view.findViewById(R.id.go_location);
+        LinearLayout btnCall = view.findViewById(R.id.go_tiket);
 
         btnInetLate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -104,6 +107,30 @@ public class LayananFragment extends Fragment {
                 Intent intent = new Intent(Intent.ACTION_VIEW);
                 intent.setData(Uri.parse(Url));
                 startActivity(intent);
+            }
+        });
+        btnEmail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String email = "conexamediaacces@gmail.com";
+                Intent intent = new Intent(Intent.ACTION_SENDTO);
+                intent.setData(Uri.parse("mailto:" + email));
+                intent.putExtra(Intent.EXTRA_SUBJECT,"Permasalahan Jaringan");
+                intent.putExtra(Intent.EXTRA_TEXT,"Hai admin!");
+                startActivity(intent);
+
+            }
+
+        });
+        btnCall.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String number = "082116747973";
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse("tel:" + number));
+                startActivity(intent);
+
             }
         });
         return view;
@@ -168,4 +195,10 @@ public class LayananFragment extends Fragment {
         animator.start();
     }
 
+    @Override
+    public void onStop() {
+        super.onStop();
+
+
+    }
 }

@@ -7,16 +7,22 @@
         <item name="colorOnPrimary">@color/white</item>
         <item name="colorSurface">@color/white</item>
         <item name="colorOnSurface">@color/black</item>
+        <item name="android:windowActivityTransitions">true</item>
+        <!-- specify enter and exit transitions -->
 
     </style>
 
     <style name="Theme.ConexaHotspot" parent="Base.Theme.ConexaHotspot" />
 
+    <style name="SlideAnimation" parent="android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/slide_from_bottom</item>
+        <item name="android:activityOpenExitAnimation">@anim/stay</item>
+        <item name="android:activityCloseEnterAnimation">@anim/stay</item>
+        <item name="android:activityCloseExitAnimation">@anim/slide_to_bottom</item>
+    </style>
 
-
-<!--<style name="ActivityAnima" parent=@android:style/Animation.Activity()-->
-<!--    <item name="androidwindowEnterAnimation">@anim/slide_in</item>-->
-<!--    <item name="androidwindowExitAnimation">@anim/slide_out</item>-->
-<!--</style>-->
+    <style name="Theme.SlideAnimWindow" parent="Base.Theme.ConexaHotspot">
+        <item name="android:windowAnimationStyle">@style/SlideAnimation</item>
+    </style>
 
 </resources>

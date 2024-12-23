@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, ConexaPaket.class);
+                overridePendingTransition(R.anim.slide_from_bottom, R.anim.stay);
                 startActivity(intent);
             }
         });
