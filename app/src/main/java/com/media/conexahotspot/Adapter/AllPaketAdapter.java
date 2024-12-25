@@ -1,5 +1,7 @@
 package com.media.conexahotspot.Adapter;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,10 +11,12 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.media.conexahotspot.DetailPaket;
 import com.media.conexahotspot.Item.PaketItem;
 import com.media.conexahotspot.R;
 
 import java.text.NumberFormat;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
@@ -44,8 +48,20 @@ public class AllPaketAdapter extends RecyclerView.Adapter<AllPaketAdapter.AllPak
             holder.itemCard.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
+                    Context context = v.getContext();
+                    Intent intent = new Intent(context, DetailPaket.class);
+                    intent.putExtra("nama_paket", item.getNama_paket());
+                    intent.putExtra("p_inet", item.getP_inet());
+                    intent.putExtra("harga", item.getHarga());
+//                    intent.putExtra("imageId", item.getImageResId());
+                    intent.putExtra("biaya_pemasangan", item.getBiaya_pemasangan());
+                    List<String> deskripsiList = item.getDeskripsi();
+                    if (deskripsiList != null) {
+                        intent.putStringArrayListExtra("deskripsi", new ArrayList<>(deskripsiList));
+                    }
+                    context.startActivity(intent);
                 }
+
             });
 
     }
@@ -65,9 +81,7 @@ public class AllPaketAdapter extends RecyclerView.Adapter<AllPaketAdapter.AllPak
             super(itemView);
             itemNama = itemView.findViewById(R.id.nama_paket);
             itemPInet = itemView.findViewById(R.id.p_inet);
-            itemHarga = itemView.findViewById(R.id.
-
-                    harga);
+            itemHarga = itemView.findViewById(R.id.harga);
             itemCard = itemView.findViewById(R.id.item_card);
         }
     }

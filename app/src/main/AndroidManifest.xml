@@ -20,7 +20,8 @@
             android:exported="true" />
         <activity
             android:name=".ConexaPaket"
-            android:exported="true" />
+            android:exported="true"
+            android:theme="@style/Theme.SlideAnimWindow"/>
 
         <activity
             android:name=".DetailPaket"

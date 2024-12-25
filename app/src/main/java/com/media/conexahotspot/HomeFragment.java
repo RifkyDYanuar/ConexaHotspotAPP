@@ -175,11 +175,11 @@ public class HomeFragment extends Fragment {
                     recyclerView.smoothScrollToPosition(currentPosition +1);
                 }
 
-                handler.postDelayed(this, 7000);
+                handler.postDelayed(this, 10000);
 
             }
             };
-         handler.postDelayed(runnable, 7000);
+         handler.postDelayed(runnable, 10000);
         recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
             public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
@@ -187,7 +187,7 @@ public class HomeFragment extends Fragment {
                 if(newState == RecyclerView.SCROLL_STATE_DRAGGING){
                     handler.removeCallbacks(runnable);
                 } else if (newState== RecyclerView.SCROLL_STATE_IDLE) {
-                    handler.postDelayed(runnable, 7000);
+                    handler.postDelayed(runnable, 10000);
                 }
             }
         });

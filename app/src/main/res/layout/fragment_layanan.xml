@@ -309,6 +309,7 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
                         <LinearLayout
+                            android:id="@+id/go_email"
                             android:layout_width="match_parent"
                             android:layout_height="60dp"
                             android:orientation="horizontal">
@@ -358,6 +359,7 @@
 
                         <!--Card Lokasi-->
                         <LinearLayout
+                            android:id="@+id/go_location"
                             android:layout_width="match_parent"
                             android:layout_height="60dp"
                             android:orientation="horizontal">
@@ -406,6 +408,7 @@
 
                         <!--Card Tiket-->
                         <LinearLayout
+                            android:id="@+id/go_tiket"
                             android:layout_width="match_parent"
                             android:layout_height="60dp"
                             android:orientation="horizontal">
