@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HistoryFragment">
+    tools:context=".HistoryFragment"
+    android:background="@color/white">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -37,5 +38,13 @@
             android:fontFamily="@font/poppins_bold"/>
 
     </RelativeLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/history"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        >
+
+    </androidx.recyclerview.widget.RecyclerView>
 
 </FrameLayout>

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".HomeFragment">
  <androidx.core.widget.NestedScrollView
@@ -53,7 +54,7 @@
              android:background="@drawable/vector_8" />
          <LinearLayout
              android:layout_width="match_parent"
-             android:layout_height="match_parent"
+             android:layout_height="wrap_content"
              android:orientation="vertical">
              <androidx.cardview.widget.CardView
                  android:layout_width="match_parent"
@@ -78,6 +79,7 @@
                              android:layout_height="wrap_content"
                              android:orientation="vertical">
                              <androidx.cardview.widget.CardView
+                                 android:id="@+id/tagihan"
                                  android:layout_marginHorizontal="18dp"
                                  android:layout_width="55dp"
                                  android:layout_height="55dp"
@@ -105,6 +107,7 @@
                              android:layout_height="wrap_content"
                              android:orientation="vertical">
                              <androidx.cardview.widget.CardView
+                                 android:id="@+id/coverage"
                                  android:layout_marginHorizontal="18dp"
                                  android:layout_width="55dp"
                                  android:layout_height="55dp"
@@ -132,6 +135,7 @@
                              android:layout_height="wrap_content"
                              android:orientation="vertical">
                              <androidx.cardview.widget.CardView
+                                 android:id="@+id/paket"
                                  android:layout_marginHorizontal="18dp"
                                  android:layout_width="55dp"
                                  android:layout_height="55dp"
@@ -159,6 +163,7 @@
                              android:layout_height="wrap_content"
                              android:orientation="vertical">
                              <androidx.cardview.widget.CardView
+                                 android:id="@+id/upgrade"
                                  android:layout_marginHorizontal="18dp"
                                  android:layout_width="55dp"
                                  android:layout_height="55dp"
@@ -178,15 +183,10 @@
                                  android:text="Upgrade"
                                  android:textAlignment="center"
                                  android:fontFamily="@font/poppins_bold"/>
-
                          </LinearLayout>
-
-
-
                      </LinearLayout>
 
                  </LinearLayout>
-
              </androidx.cardview.widget.CardView>
              <TextView
                  android:layout_width="wrap_content"
@@ -241,212 +241,55 @@
                      android:layout_marginHorizontal="30dp" />
 
              </LinearLayout>
-             <LinearLayout
+             <androidx.recyclerview.widget.RecyclerView
+                 android:layout_marginVertical="10dp"
+                 android:id="@+id/grid_view_paket"
                  android:layout_width="match_parent"
                  android:layout_height="wrap_content"
-                 android:orientation="vertical"
-                 android:layout_gravity="bottom">
-                 <LinearLayout
-                     android:layout_width="match_parent"
-                     android:layout_height="wrap_content"
-                     android:orientation="horizontal"
-                     android:layout_gravity="bottom">
-                     <androidx.cardview.widget.CardView
-                         android:id="@+id/hotspot_lite"
-                         android:layout_marginBottom="20dp"
-                         android:layout_marginHorizontal="20dp"
-                         android:layout_width="match_parent"
-                         android:layout_weight="1"
-                         android:layout_height="180dp"
-                         app:cardCornerRadius="15dp"
-                         app:cardElevation="8dp">
-
-                         <LinearLayout
-                             android:layout_width="match_parent"
-                             android:layout_height="wrap_content"
-                             android:orientation="vertical">
-                             <ImageView
-                                 android:layout_width="wrap_content"
-                                 android:layout_height="wrap_content"
-                                 android:src="@drawable/outline_location_on_24"
-                                 android:layout_margin="14dp"/>
-
-                             <TextView
-                                 android:layout_width="match_parent"
-                                 android:layout_height="wrap_content"
-                                 android:layout_marginHorizontal="10dp"
-                                 android:text="@string/lite"
-                                 android:fontFamily="@font/poppins_bold"/>
-                             <TextView
-                                 android:layout_width="match_parent"
-                                 android:layout_height="wrap_content"
-                                 android:layout_marginHorizontal="10dp"
-                                 android:textSize="10dp"
-                                 android:text="@string/perangkatlite"
-                                 android:fontFamily="@font/poppins_bold"/>
-                             <TextView
-                                 android:layout_width="match_parent"
-                                 android:layout_height="wrap_content"
-                                 android:layout_marginHorizontal="10dp"
-                                 android:text="@string/hargalite"
-                                 android:textAlignment="textEnd"
-                                 android:textColor="@color/orange"
-                                 android:fontFamily="@font/poppins_bold"
-                                 android:layout_marginVertical="20dp"/>
-                         </LinearLayout>
-                     </androidx.cardview.widget.CardView>
-                     <androidx.cardview.widget.CardView
-                         android:id="@+id/hotspot_pro"
-                         android:layout_marginBottom="20dp"
-                         android:layout_marginHorizontal="20dp"
-                         android:layout_weight="1"
-                         android:layout_width="match_parent"
-                         android:layout_height="180dp"
-                         app:cardCornerRadius="15dp"
-                         app:cardElevation="8dp">
-                         <LinearLayout
-                             android:layout_width="match_parent"
-                             android:layout_height="wrap_content"
-                             android:orientation="vertical">
-                             <ImageView
-                                 android:layout_width="wrap_content"
-                                 android:layout_height="wrap_content"
-                                 android:src="@drawable/outline_location_on_24"
-                                 android:layout_margin="14dp"/>
-
-                             <TextView
-                                 android:layout_width="match_parent"
-                                 android:layout_height="wrap_content"
-                                 android:layout_marginHorizontal="10dp"
-                                 android:text="@string/pro"
-                                 android:fontFamily="@font/poppins_bold"/>
-                             <TextView
-                                 android:layout_width="match_parent"
-                                 android:layout_height="wrap_content"
-                                 android:layout_marginHorizontal="10dp"
-                                 android:textSize="10dp"
-                                 android:text="@string/perangkatpro"
-                                 android:fontFamily="@font/poppins_bold"/>
-                             <TextView
-                                 android:layout_width="match_parent"
-                                 android:layout_height="wrap_content"
-                                 android:layout_marginHorizontal="10dp"
-                                 android:text="@string/hargapro"
-                                 android:textAlignment="textEnd"
-                                 android:textColor="@color/orange"
-                                 android:fontFamily="@font/poppins_bold"
-                                 android:layout_marginVertical="20dp"/>
-                         </LinearLayout>
-                     </androidx.cardview.widget.CardView>
-                 </LinearLayout>
-             </LinearLayout>
-             <LinearLayout
+                 android:clipToPadding="false"
+                 android:backgroundTint="@null"
+                 />
+             <TextView
                  android:layout_width="match_parent"
+                 android:textAlignment="textStart"
                  android:layout_height="wrap_content"
-                 android:orientation="vertical"
-                 android:layout_gravity="bottom">
-                 <LinearLayout
-                     android:layout_width="match_parent"
-                     android:layout_height="wrap_content"
-                     android:orientation="horizontal"
-                     android:layout_gravity="bottom">
-                     <androidx.cardview.widget.CardView
-                         android:layout_marginBottom="20dp"
-                         android:layout_marginHorizontal="20dp"
-                         android:layout_width="match_parent"
-                         android:layout_weight="1"
-                         android:layout_height="180dp"
-                         app:cardCornerRadius="15dp"
-                         app:cardElevation="8dp">
+                 android:text="@string/conexa_promosi"
+                 android:fontFamily="@font/poppins_bold"
+                 android:layout_marginHorizontal="30dp" />
 
-                         <LinearLayout
-                             android:layout_width="match_parent"
-                             android:layout_height="wrap_content"
-                             android:orientation="vertical">
-                             <ImageView
-                                 android:layout_width="wrap_content"
-                                 android:layout_height="wrap_content"
-                                 android:src="@drawable/outline_location_on_24"
-                                 android:layout_margin="14dp"/>
-
-                             <TextView
-                                 android:layout_width="match_parent"
-                                 android:layout_height="wrap_content"
-                                 android:layout_marginHorizontal="10dp"
-                                 android:text="@string/max"
-                                 android:fontFamily="@font/poppins_bold"/>
-                             <TextView
-                                 android:layout_width="match_parent"
-                                 android:layout_height="wrap_content"
-                                 android:layout_marginHorizontal="10dp"
-                                 android:textSize="10dp"
-                                 android:text="@string/perangkatmax"
-                                 android:fontFamily="@font/poppins_bold"/>
-                             <TextView
-                                 android:layout_width="match_parent"
-                                 android:layout_height="wrap_content"
-                                 android:layout_marginHorizontal="10dp"
-                                 android:text="@string/hargamax"
-                                 android:textAlignment="textEnd"
-                                 android:textColor="@color/orange"
-                                 android:fontFamily="@font/poppins_bold"
-                                 android:layout_marginVertical="20dp"/>
-                         </LinearLayout>
-                     </androidx.cardview.widget.CardView>
-                     <androidx.cardview.widget.CardView
-                         android:layout_marginBottom="20dp"
-                         android:layout_marginHorizontal="20dp"
-                         android:layout_weight="1"
-                         android:layout_width="match_parent"
-                         android:layout_height="180dp"
-                         app:cardCornerRadius="15dp"
-                         app:cardElevation="8dp">
-                         <LinearLayout
-                             android:layout_width="match_parent"
-                             android:layout_height="wrap_content"
-                             android:orientation="vertical">
-                             <ImageView
-                                 android:layout_width="wrap_content"
-                                 android:layout_height="wrap_content"
-                                 android:src="@drawable/outline_location_on_24"
-                                 android:layout_margin="14dp"/>
-
-                             <TextView
-                                 android:layout_width="match_parent"
-                                 android:layout_height="wrap_content"
-                                 android:layout_marginHorizontal="10dp"
-                                 android:text="@string/ultra"
-                                 android:fontFamily="@font/poppins_bold"/>
-                             <TextView
-                                 android:layout_width="match_parent"
-                                 android:layout_height="wrap_content"
-                                 android:layout_marginHorizontal="10dp"
-                                 android:textSize="10dp"
-                                 android:text="@string/perangkatultra"
-                                 android:fontFamily="@font/poppins_bold"/>
-                             <TextView
-                                 android:layout_width="match_parent"
-                                 android:layout_height="wrap_content"
-                                 android:layout_marginHorizontal="10dp"
-                                 android:text="@string/hargaultra"
-                                 android:textAlignment="textEnd"
-                                 android:textColor="@color/orange"
-                                 android:fontFamily="@font/poppins_bold"
-                                 android:layout_marginVertical="20dp"/>
-                         </LinearLayout>
-                     </androidx.cardview.widget.CardView>
-                 </LinearLayout>
-             </LinearLayout>
-             <androidx.cardview.widget.CardView
-                 android:layout_width="match_parent"
-                 app:cardCornerRadius="15dp"
+             <View
+                 android:layout_width="wrap_content"
+                 android:layout_height="1dp"
+                 android:layout_gravity="center"
+                 android:background="@color/dark_grey"
+                 android:layout_marginHorizontal="30dp" />
+             
+             <FrameLayout
+                 android:layout_width="wrap_content"
                  android:layout_marginVertical="20dp"
                  android:layout_marginHorizontal="20dp"
-                 android:layout_height="147dp"
-                 app:cardBackgroundColor="@color/bluedark">
-
-
-             </androidx.cardview.widget.CardView>
+                 android:layout_height="wrap_content"
+                 >
+                 <ImageView
+                     android:layout_width="match_parent"
+                     android:layout_height="match_parent"
+                     android:src="@drawable/group_33"/>
+                 <ImageView
+                     android:layout_marginTop="10dp"
+                     android:layout_width="wrap_content"
+                     android:layout_height="match_parent"
+                     android:src="@drawable/image_13"/>
+             </FrameLayout>
+             <FrameLayout
+                 android:layout_width="wrap_content"
+                 android:layout_marginHorizontal="20dp"
+                 android:layout_height="wrap_content"
+                 android:layout_marginBottom="20dp">
+                 <ImageView
+                     android:layout_width="match_parent"
+                     android:layout_height="match_parent"
+                     android:src="@drawable/group_34"/>
+             </FrameLayout>
          </LinearLayout>
      </RelativeLayout>
     </androidx.core.widget.NestedScrollView>
@@ -456,11 +299,11 @@
         android:layout_height="wrap_content"
         app:elevation="0dp"
         android:background="@android:color/transparent"
+        android:foreground="@drawable/network"
         app:layout_scrollFlags="scroll|enterAlways"
         android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar">
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
-            android:background="@android:color/transparent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:theme="@style/ThemeOverlay.MaterialComponents.ActionBar"
@@ -495,7 +338,6 @@
                         android:fontFamily="@font/poppins_bold"
                         android:text=""
                         android:textColor="@color/white" />
-
                     <TextView
                         android:id="@+id/show_internet"
                         android:layout_width="wrap_content"
@@ -503,7 +345,6 @@
                         android:fontFamily="@font/poppins_bold"
                         android:text="CNX06013"
                         android:textColor="@color/orange" />
-
                 </LinearLayout>
                 <ImageView
                     android:layout_weight="2"
@@ -512,9 +353,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:src="@drawable/baseline_circle_notifications_24" />
-
             </LinearLayout>
-
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

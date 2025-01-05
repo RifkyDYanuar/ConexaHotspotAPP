@@ -16,6 +16,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.media.conexahotspot.Adapter.AllPaketAdapter;
 import com.media.conexahotspot.Item.PaketItem;
@@ -86,8 +87,9 @@ public class CNXFragment extends Fragment {
         AllPaketAdapter adapter = new AllPaketAdapter(allpaketItems);
         recyclerView.setAdapter(adapter);
         reference = FirebaseDatabase.getInstance().getReference("paket_item");
+        Query query = reference.orderByKey().startAt("PKT0001").endAt("PKT0005");
         auth = FirebaseAuth.getInstance();
-        reference.addListenerForSingleValueEvent(new ValueEventListener() {
+        query.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 allpaketItems.clear();

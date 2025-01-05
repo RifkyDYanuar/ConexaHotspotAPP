@@ -80,6 +80,35 @@
     <string name="internet_lambat">Internet terasa lambat?</string>
     <string name="speed">Speed Test</string>
     <string name="sk">Setuju dengan Syarat dan Ketentuan yang berlaku.</string>
+    <string name="conexa_promosi">Conexa Promotion</string>
+
+    <!--    Pendaftaran pemasangan-->
+    <string name="name">Nama</string>
+    <string name="telp">No Telepon</string>
+    <string name="alamat">Masukan alamat lengkap</string>
+    <string name="pemasangan">Tanggal pemasangan</string>
+    <string name="submit">Submit</string>
+    <string name="kebijakan">Setuju dari Privasi dan kebijakan tertentu</string>
+
+
+    <!--    Konfirmasi Pembayaran -->
+    <string name="rincian">Rincian Informasi</string>
+    <string name="nama_lengkap">Nama Lengkap </string>
+    <string name="nama_admin">: Yusuf Septiana</string>
+    <string name="no_telepon">No Telepon </string>
+    <string name="telepon_admin">: 08x-xxx-xxx-xxx</string>
+    <string name="alamats">Alamat </string>
+    <string name="alamat_admin">: Dusun Pahing RT14 RW07 Desa Wilanagara, Kecamatan Luragung</string>
+    <string name="paket">Paket :</string>
+    <string name="total_pembayaran">Total Yang harus dibayar :</string>
+    <string name="rekening_content">SILAHKAN LAKUKAN PEMBAYARAN MELALUI \nREKENING :</string>
+    <string name="no_rekening">428001001476509 </string>
+    <string name="nama_rekening">A/N YUSUF SEPTIANA </string>
+    <string name="silahkan">KONFIRMASI PEMBAYARAN DENGAN MENGIRIM BUKTI TRANSFER KE ADMIN</string>
+    <string name="button_konfirmasi">Konfirmasi pembayaran</string>
+    <string name="pending_konfirmasi">Dibatalkan </string>
+
+
 </resources>
 
 

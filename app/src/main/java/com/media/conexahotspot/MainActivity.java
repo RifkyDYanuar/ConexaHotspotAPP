@@ -1,5 +1,4 @@
 package com.media.conexahotspot;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -26,7 +25,6 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.auth.FirebaseAuth;
-
 public class MainActivity extends AppCompatActivity {
     ImageView centerButton;
     FirebaseAuth auth;
@@ -105,6 +103,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
         String fragment = intent.getStringExtra("fragment");
         if (fragment != null && fragment.equals("profil")) {
             getSupportFragmentManager()
@@ -123,5 +122,10 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Tekan sekali lagi untuk keluar", Toast.LENGTH_SHORT).show();
         }
         backPressedTime = System.currentTimeMillis();
+    }
+
+    public void setSelectedMenuItem(int menuItemId) {
+        BottomNavigationView bottomNavigationView = findViewById(R.id.menu_navbottom);
+        bottomNavigationView.setSelectedItemId(menuItemId);
     }
 }

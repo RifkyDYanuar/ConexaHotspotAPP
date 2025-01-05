@@ -1,4 +1,4 @@
-package com.media.conexahotspot;
+package com.media.conexahotspot.Item;
 
 public class UserHelper {
 

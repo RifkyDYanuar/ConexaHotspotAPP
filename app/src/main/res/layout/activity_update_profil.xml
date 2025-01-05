@@ -4,10 +4,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
+    android:background="@color/white"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".UpdateProfil">
-
 
     <FrameLayout
         android:background="@color/bluedark"
@@ -28,7 +28,7 @@
             android:src="@drawable/baseline_arrow_back_ios_24"/>
 
         <TextView
-            android:textSize="20dp"
+            android:textSize="20sp"
             android:textColor="@color/white"
             android:fontFamily="@font/poppins_bold"
             android:layout_marginTop="50dp"
@@ -114,7 +114,6 @@
         app:layout_constraintRight_toRightOf="parent"
         android:drawableLeft="@drawable/outline_edit_24"
         app:layout_constraintTop_toBottomOf="@id/notelepon" />
-
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -124,5 +123,4 @@
         android:text="@string/AppVersi"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

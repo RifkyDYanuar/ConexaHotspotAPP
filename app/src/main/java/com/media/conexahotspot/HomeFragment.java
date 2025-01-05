@@ -1,5 +1,7 @@
 package com.media.conexahotspot;
 
+import static android.graphics.Color.rgb;
+
 import android.animation.ValueAnimator;
 import android.content.Intent;
 import android.graphics.Color;
@@ -10,6 +12,7 @@ import androidx.cardview.widget.CardView;
 import androidx.core.widget.NestedScrollView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -19,6 +22,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -32,7 +36,9 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.media.conexahotspot.Adapter.HotspotAdapter;
 import com.media.conexahotspot.Adapter.PaketAdapter;
 import com.media.conexahotspot.Item.PaketItem;
 
@@ -83,12 +89,46 @@ public class HomeFragment extends Fragment {
         AppBarLayout bar = view.findViewById(R.id.appbar);
         NestedScrollView nestedScrollView = view.findViewById(R.id.nested);
         ImageView notifIcon = view.findViewById(R.id.notif_icon);
+        CardView Tagihan = view.findViewById(R.id.tagihan);
+        CardView Coverage = view.findViewById(R.id.coverage);
+        CardView Paket = view.findViewById(R.id.paket);
+        CardView Upgrade = view.findViewById(R.id.upgrade);
         TextView txtName = view.findViewById(R.id.show_username);
         ProgressBar loading = view.findViewById(R.id.progress_bar);
-        CardView HLite = view.findViewById(R.id.hotspot_lite);
-        CardView HPro   = view.findViewById(R.id.hotspot_pro);
         loading.setVisibility(View.VISIBLE);
 
+        Tagihan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                requireActivity()
+                        .getSupportFragmentManager()
+                        .beginTransaction()
+                        .setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out)
+                        .replace(R.id.fragment_content, new HistoryFragment())
+                        .commit();
+                ((MainActivity) requireActivity()).setSelectedMenuItem(R.id.page_2);
+            }
+        });
+        Coverage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        Paket.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(requireContext(), ConexaPaket.class);
+                startActivity(intent);
+            }
+        });
+        Upgrade.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
         if (getArguments() != null) {
             String Name = getArguments().getString("name");
             txtName.setText(Name);
@@ -96,9 +136,9 @@ public class HomeFragment extends Fragment {
         nestedScrollView.setOnScrollChangeListener(new NestedScrollView.OnScrollChangeListener() {
             @Override
             public void onScrollChange(@NonNull NestedScrollView v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
-                if (scrollY > oldScrollY) {
-                    txtName.setTextColor(Color.BLACK);
-                    notifIcon.setColorFilter(Color.BLACK);
+                if (scrollY > 0) {
+                    txtName.setTextColor(rgb(11 ,48, 84));
+                    notifIcon.setColorFilter(rgb(255,41 ,14));
                 }else {
                     txtName.setTextColor(Color.WHITE);
                     notifIcon.setColorFilter(Color.WHITE);
@@ -106,45 +146,26 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        HLite.setOnClickListener(new View.OnClickListener() {
+        notifIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(requireActivity(), DetailPaket.class);
+                Intent intent = new Intent(getActivity(), ConexaNotification.class);
                 startActivity(intent);
             }
         });
-        HPro.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(requireActivity(),DetailPaket.class);
-                startActivity(intent);
-            }
-        });
-
-
-
-
-//        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-//                .requestIdToken(getString(R.string.client_id))
-//                .requestEmail()
-//                .build();
-//        GoogleSignInClient googleSignInClient = GoogleSignIn.getClient(requireActivity(), gso);
-//        auth = FirebaseAuth.getInstance();
-
-
 //      RecycleView
         RecyclerView recyclerView = view.findViewById(R.id.recycleview);
         recyclerView.setLayoutManager(new LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL,false));
-
         paketItems = new ArrayList<>();
         PaketAdapter adapter = new PaketAdapter(paketItems);
         recyclerView.setAdapter(adapter);
         auth = FirebaseAuth.getInstance();
         reference = FirebaseDatabase.getInstance().getReference("paket_item");
-        reference.addListenerForSingleValueEvent(new ValueEventListener() {
+        Query query = reference.orderByKey().startAt("PKT0001").endAt("PKT0003");
+        query.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                paketItems.clear();
+
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                     PaketItem paketItem = dataSnapshot.getValue(PaketItem.class);
                     if (paketItem != null) {
@@ -191,11 +212,40 @@ public class HomeFragment extends Fragment {
                 }
             }
         });
+        RecyclerView recyclerView2 = view.findViewById(R.id.grid_view_paket);
+        List<PaketItem>hotspotItems = new ArrayList<>();
+        HotspotAdapter hotspotAdapter = new HotspotAdapter(hotspotItems);
+        GridLayoutManager layoutManager = new GridLayoutManager(getContext(),2);
+        recyclerView2.setLayoutManager(layoutManager);
+        recyclerView2.setAdapter(hotspotAdapter);
+        auth = FirebaseAuth.getInstance();
+        reference = FirebaseDatabase.getInstance().getReference("paket_item");
+        Query queryhotspot = reference.orderByKey().startAt("PKH0001").endAt("PKH0004");
+        queryhotspot.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                    PaketItem paketHotspotItem = dataSnapshot.getValue(PaketItem.class);
+                    if (paketHotspotItem != null) {
+                        hotspotItems.add(paketHotspotItem);
+                    }
+                }
+                hotspotAdapter.notifyDataSetChanged();
+                loading.setVisibility(View.GONE);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                loading.setVisibility(View.GONE);
+
+                Log.e("FirebaseError", error.getMessage());
+            }
+        });
 
         return view;
-
-
     }
+
     public void updateProfileData(String updatedName, String updatedUsername) {
         TextView nameTextView = getView().findViewById(R.id.show_name);
         TextView usernameTextView = getView().findViewById(R.id.show_username);
@@ -204,4 +254,3 @@ public class HomeFragment extends Fragment {
     }
 
 }
-

@@ -4,6 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
+    android:background="@color/white"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ContactPerson">
@@ -37,7 +38,6 @@
             android:text="Contact Person"/>
     </FrameLayout>
 
-
     <ImageView
         android:layout_width="302dp"
         android:layout_height="277dp"
@@ -47,6 +47,7 @@
         android:layout_marginTop="121dp"
         android:src="@drawable/animasi" />
     <TextView
+        android:layout_marginHorizontal="20dp"
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -56,6 +57,7 @@
         android:layout_centerVertical="true"/>
 
     <LinearLayout
+        android:layout_marginHorizontal="20dp"
         android:id="@+id/email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -85,6 +87,7 @@
             android:src="@drawable/baseline_arrow_forward_ios_24" />
     </LinearLayout>
     <LinearLayout
+        android:layout_marginHorizontal="20dp"
         android:id="@+id/nowa"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -115,6 +118,7 @@
 
     </LinearLayout>
     <LinearLayout
+        android:layout_marginHorizontal="20dp"
         android:id="@+id/notelepon"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

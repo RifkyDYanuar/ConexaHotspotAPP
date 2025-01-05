@@ -123,6 +123,19 @@ public class LayananFragment extends Fragment {
             }
 
         });
+
+        btnLocation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Define the geo coordinates
+                double latitude = -7.0383819;
+                double longitude =  108.6242633;
+                Uri gmmIntentUri = Uri.parse("geo:0,0?q=" + latitude + "," + longitude);
+                Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+                    startActivity(mapIntent);
+            }
+        });
+
         btnCall.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

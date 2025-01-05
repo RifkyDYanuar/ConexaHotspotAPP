@@ -3,21 +3,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/frame_custom"
+    android:background="@color/white"
     android:elevation="8dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".CNXFragment">
-
-
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/all_paket"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp"
-            >
+            android:layout_marginHorizontal="20dp">
         </androidx.recyclerview.widget.RecyclerView>
-
-
 
 </FrameLayout>

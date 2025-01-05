@@ -3,16 +3,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".LayananFragment">
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="220dp"
+        android:layout_height="250dp"
         android:background="@drawable/vector_9"/>
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="230dp"
         android:background="@drawable/vector_3"/>
 
     <FrameLayout
@@ -21,7 +22,7 @@
         android:scaleType="centerCrop"
         android:background="@drawable/conexacare"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="60dp"
         android:layout_marginHorizontal="40dp">
         <!--diisi background vector-->
     </FrameLayout>
@@ -29,7 +30,7 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="220dp">
+        android:layout_marginTop="250dp">
 
         <ScrollView
             android:layout_width="match_parent"
@@ -159,7 +160,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_margin="14dp"
-                                android:src="@drawable/noConection"/>
+                                android:src="@drawable/no_conection"/>
                             <LinearLayout
                                 android:layout_weight="1"
                                 android:layout_width="match_parent"
