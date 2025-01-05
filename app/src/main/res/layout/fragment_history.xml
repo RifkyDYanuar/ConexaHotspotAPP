@@ -6,43 +6,45 @@
     tools:context=".HistoryFragment"
     android:background="@color/white">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+<!--    <RelativeLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent">-->
 
-        <ImageView
-            android:id="@+id/images"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:src="@drawable/nomoney"
-            android:layout_centerInParent="true"/>
+<!--        <ImageView-->
+<!--            android:id="@+id/images"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:src="@drawable/nomoney"-->
+<!--            android:layout_centerInParent="true"/>-->
 
-        <TextView
-            android:id="@+id/title"
-            android:layout_below="@id/images"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/notfound"
-            android:textAlignment="center"
-            android:textSize="20dp"
-            android:layout_marginVertical="10dp"
-            android:fontFamily="@font/poppins_bold"/>
-        <TextView
-            android:id="@+id/deskripsi"
-            android:layout_below="@id/title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/descriptionforhistory"
-            android:textAlignment="center"
-            android:layout_marginVertical="10dp"
-            android:fontFamily="@font/poppins_bold"/>
+<!--        <TextView-->
+<!--            android:id="@+id/title"-->
+<!--            android:layout_below="@id/images"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="@string/notfound"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textSize="20dp"-->
+<!--            android:layout_marginVertical="10dp"-->
+<!--            android:fontFamily="@font/poppins_bold"/>-->
+<!--        <TextView-->
+<!--            android:id="@+id/deskripsi"-->
+<!--            android:layout_below="@id/title"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="@string/descriptionforhistory"-->
+<!--            android:textAlignment="center"-->
+<!--            android:layout_marginVertical="10dp"-->
+<!--            android:fontFamily="@font/poppins_bold"/>-->
 
-    </RelativeLayout>
+<!--    </RelativeLayout>-->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/history"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="60dp"
+        tools:listitem="@layout/history_transaksi"
         >
 
     </androidx.recyclerview.widget.RecyclerView>

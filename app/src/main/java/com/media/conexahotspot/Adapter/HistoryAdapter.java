@@ -12,7 +12,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.media.conexahotspot.Item.TransaksiClass;
 import com.media.conexahotspot.R;
 
+import java.text.NumberFormat;
 import java.util.List;
+import java.util.Locale;
 
 public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.HistoryViewHolder> {
     private List<TransaksiClass> transaksiClassList;
@@ -29,9 +31,12 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.HistoryV
     @Override
     public void onBindViewHolder(@NonNull HistoryAdapter.HistoryViewHolder holder, int position) {
         TransaksiClass transaksiClass = transaksiClassList.get(position);
-        holder.NamaPaket.setText(transaksiClass.getName());
-
-
+        holder.NamaPaket.setText(transaksiClass.getNama_paket());
+        Long Harga = transaksiClass.getHarga();
+        String formatHarga = NumberFormat.getInstance(Locale.getDefault()).format(Harga);
+        holder.Harga.setText("Rp. " + formatHarga);
+        holder.Status.setText(transaksiClass.getStatus());
+        holder.TanggalPemasangan.setText(transaksiClass.getTanggal_pemasangan());
     }
 
     @Override

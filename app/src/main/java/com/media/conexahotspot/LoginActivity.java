@@ -330,7 +330,7 @@ public class LoginActivity extends AppCompatActivity {
     }
     private void showDialogError(String usernameErrorMessage , String passwordErrorMessage){
         LinearLayout layout = findViewById(R.id.erordialog);
-        View view = LayoutInflater.from(LoginActivity.this).inflate(R.layout.alert_error,layout);
+        View view = LayoutInflater.from(LoginActivity.this).inflate(R.layout.alert_login_error,layout);
 
         TextView content = view.findViewById(R.id.content);
         TextView content2 = view.findViewById(R.id.content2);
