@@ -109,6 +109,18 @@
     <string name="pending_konfirmasi">Dibatalkan </string>
 
 
+    <string name="history">List History Pemasangan paket</string>
+    <string name="maintenance">Notifications are under development!</string>
+
+    <!--DATA IDENTITTAS DEVELOPMENT-->
+
+    <string name="development">Developer team Conexa Hotspot</string>
+    <string name="nama_rifky">Rifky Dewani Yanuar</string>
+    <string name="nim_rifky">:20220810096</string>
+    <string name="nama_besla">Besla Andria Arshela</string>
+    <string name="nim_besla">:20220810109</string>
+    <string name="nama_yusuf">Yusuf Septiana</string>
+    <string name="nim_yusuf">:20220810105</string>
 </resources>
 
 

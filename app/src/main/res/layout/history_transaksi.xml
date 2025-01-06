@@ -28,7 +28,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/harga"
                 android:fontFamily="@font/poppins"
-                android:text="RP.120.000"/>
+                android:text=""/>
             <Button
                 android:layout_weight="1.7"
                 android:id="@+id/status"
@@ -45,7 +45,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/tanggal_pemasangan"
                 android:fontFamily="@font/poppins"
-                android:text="11-01-2024"/>
+                android:text=""/>
 
         </LinearLayout>
         <View

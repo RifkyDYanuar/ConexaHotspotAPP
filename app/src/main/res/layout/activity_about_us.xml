@@ -34,41 +34,155 @@
     </FrameLayout>
 
     <ScrollView
+        android:layout_marginBottom="20dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbars="vertical"
         android:layout_below="@id/frame">
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
             <ImageView
                 android:id="@+id/imageView"
                 android:layout_width="422dp"
                 android:layout_height="367dp"
                 android:layout_marginTop="68dp"
                 app:srcCompat="@drawable/animasi" />
-
-            <TextView
-                android:id="@+id/title"
-                android:layout_marginHorizontal="30dp"
-                android:layout_below="@id/imageView"
-                android:textSize="20sp"
+            <LinearLayout
+                android:id="@+id/conexa_hotspot"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="What Is Conexa Hotspot?"
-                android:fontFamily="@font/poppins_bold"/>
+                android:layout_below="@id/imageView"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_weight="1"
+                    android:id="@+id/title"
+                    android:layout_marginHorizontal="30dp"
+                    android:textSize="16sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="What Is Conexa Hotspot?"
+                    android:fontFamily="@font/poppins_bold"/>
+                <ImageView
+                    android:layout_weight="4"
+                    android:id="@+id/btnTampil"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/baseline_keyboard_arrow_down"/>
+            </LinearLayout>
             <TextView
+                android:id="@+id/content"
                 android:layout_marginHorizontal="30dp"
-                android:layout_marginBottom="70dp"
-                android:textSize="16sp"
-                android:layout_below="@id/title"
+                android:layout_below="@id/conexa_hotspot"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/aboutus"
                 android:lineHeight="28sp"
                 android:justificationMode="inter_word"
+                android:visibility="gone"
                 android:fontFamily="@font/poppins_medium"/>
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:id="@+id/conexa_development"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_weight="1"
+                    android:id="@+id/title_development"
+                    android:layout_marginHorizontal="30dp"
+                    android:textSize="16sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/development"
+                    android:fontFamily="@font/poppins_bold"/>
+                <ImageView
+                    android:layout_weight="4"
+                    android:id="@+id/btnTampil_development"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/baseline_keyboard_arrow_down"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginBottom="20dp"
+                android:visibility="gone"
+                android:layout_below="@id/conexa_development"
+                android:id="@+id/layout_development"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/conexa_development_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="30dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_weight="1"
+                        android:id="@+id/nama_development"
+                        android:textSize="16sp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/nama_rifky"
+                        android:fontFamily="@font/poppins_medium"/>
+                    <TextView
+                        android:layout_weight="1"
+                        android:id="@+id/nim_development"
+                        android:layout_marginHorizontal="30dp"
+                        android:textSize="16sp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/nim_rifky"
+                        android:fontFamily="@font/poppins_medium"/>
 
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_marginVertical="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="30dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_weight="1"
+                        android:textSize="16sp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/nama_besla"
+                        android:fontFamily="@font/poppins_medium"/>
+                    <TextView
+                        android:layout_weight="1"
+                        android:layout_marginHorizontal="30dp"
+                        android:textSize="16sp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/nim_besla"
+                        android:fontFamily="@font/poppins_medium"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="30dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_weight="1"
+                        android:textSize="16sp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/nama_yusuf"
+                        android:fontFamily="@font/poppins_medium"/>
+                    <TextView
+                        android:layout_weight="1.4"
+                        android:textSize="16sp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/nim_yusuf"
+                        android:fontFamily="@font/poppins_medium"/>
+                </LinearLayout>
+
+            </LinearLayout>
         </RelativeLayout>
     </ScrollView>
 </RelativeLayout>

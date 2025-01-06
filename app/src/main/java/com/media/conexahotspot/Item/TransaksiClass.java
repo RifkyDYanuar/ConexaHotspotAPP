@@ -8,7 +8,15 @@ public class TransaksiClass {
     private  String status;
 
     // Default constructor (diperlukan untuk Firebase)
+
+
     public TransaksiClass() {
+    }
+    public TransaksiClass(String nama_paket, Long harga, String tanggal_pemasangan, String status){
+        this.nama_paket = nama_paket;
+        this.harga = harga;
+        this.tanggal_pemasangan = tanggal_pemasangan;
+        this.status = status;
     }
 
 
